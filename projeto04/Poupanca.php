@@ -2,13 +2,13 @@
 <?php include 'index.php'?>
 
 <?php
-     class Conversao {
+     class Poupanca {
 
-            public $dolar, $cotacao, $resultado;
+            public $poupanca, $resultado;
 
-            function converter($dolar,$cotacao,$resultado){
-                if ($dolar > 0 && $cotacao > 0) {
-                    $resultado = $dolar * $cotacao;
+            function poupanca($poupanca,$resultado){
+                if ($poupanca > 0) {
+                    $resultado = $poupanca+($poupanca * 0.070) ;
                     return $resultado;
 
                   } else {
@@ -21,16 +21,17 @@
 
             function imprimir($resultConv,$operacao){
               if($operacao=='resultado')
-              echo "Valor em Reais: R$ $resultConv";
+              
+              echo "Valor do deposito após um mês de rendimento (0,70% a.m): R$ $resultConv";
                 
 
             } //FIM DO MÉTODO IMPRIMIR
 
      }// FIM DA CLASSE
     
-     $calc = new Conversao;
+     $calc = new Poupanca;
      
-     $resultConv=$calc->converter($_POST["dolar"],$_POST["cotacao"],$_POST["resultado"]);
+     $resultConv=$calc->poupanca($_POST["poupanca"],$_POST["resultado"]);
 
      $calc->imprimir($resultConv,$_POST['operacao']);
 

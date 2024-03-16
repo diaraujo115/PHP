@@ -1,4 +1,4 @@
-<?php include 'index.php'?>
+    <?php include 'index.php'?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,17 +12,17 @@
 <body>
 <center>
 
-           <form method="POST" action="Matematica.php" >
+                <form method="POST" action="Matematica.php" >
                          <p >Número 1: </p>
                          <input type="text"  name="n1">
-			             <p >Número 2: </p>
- 			             <input type="text"  name="n2">  <br>
+			            <p >Número 2: </p>
+ 		                <input type="text"  name="n2">  <br>
 
                     <br>
-	       	    <button type="submit" name="operacao" value="maior">
+	       		         <button type="submit" name="operacao" value="maior">
                              MAIOR NÚMERO 
                         </button>
-  			    <button type="submit" name="operacao" value="mult">
+  			            <button type="submit" name="operacao" value="mult">
                             MULTIPLICAÇÃO
                         </button>
 

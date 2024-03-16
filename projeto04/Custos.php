@@ -2,13 +2,14 @@
 <?php include 'index.php'?>
 
 <?php
-     class Conversao {
+     class Custos {
 
-            public $dolar, $cotacao, $resultado;
+            public $fabrica, $resultado;
 
-            function converter($dolar,$cotacao,$resultado){
-                if ($dolar > 0 && $cotacao > 0) {
-                    $resultado = $dolar * $cotacao;
+            function custo($fabrica,$imposto,$resultado){
+                if ($fabrica > 0) {
+                    $imposto = $fabrica+($fabrica * 0.45) ;
+                    $resultado = $imposto+($imposto* 0.28);
                     return $resultado;
 
                   } else {
@@ -21,16 +22,17 @@
 
             function imprimir($resultConv,$operacao){
               if($operacao=='resultado')
-              echo "Valor em Reais: R$ $resultConv";
+              
+              echo "Valor do veículo após as taxas: R$ $resultConv";
                 
 
             } //FIM DO MÉTODO IMPRIMIR
 
      }// FIM DA CLASSE
     
-     $calc = new Conversao;
+     $calc = new Custos;
      
-     $resultConv=$calc->converter($_POST["dolar"],$_POST["cotacao"],$_POST["resultado"]);
+     $resultConv=$calc->custo($_POST["fabrica"],$_POST["imposto"],$_POST["resultado"]);
 
      $calc->imprimir($resultConv,$_POST['operacao']);
 
